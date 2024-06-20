@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckKhodam.io</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+</head>
+<body>
+    <header>
+        <h1>Check Khodam mu!</h1>
+    </header>
+    <main>
+        <form id="check-form">
+            <label for="nama">Masukkan Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+            <button type="submit">Check Khodam</button>
+        </form>
+        <div id="result"></div>
+    </main>
+    <footer>
+        <p class="footer-text">Developed by <a href="https://www.instagram.com/arkantamaa/" target="_blank" class="neon">Arkan</a></p>
+        <p class="footer-text">Suport aku di <a href="https://saweria.co/Arkantamaa?utm_medium=social&utm_source=heylink.me" target="_blank" class="neon">Saweria</a></p>
+    </footer>
+    <script>
+        document.getElementById('check-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nama = document.getElementById('nama').value;
+            const resultDiv = document.getElementById('result');
+
+            const khodams = [
+                "Kuda nil Jawa",
+                "Panda Bojongsoang",
+                "Tikus Kejepit",
+                "Wawan Bakwan",
+                "Agung Hotwil",
+                "Ambatron",
+                "Peri Kecil Ayah",
+                "Bayu Kokonut",
+                
+            ];
+
+            const randomKhodam = khodams[Math.floor(Math.random() * khodams.length)];
+
+            resultDiv.textContent = `Khodam ${nama} adalah ${randomKhodam} 😂`;
+        });
+    </script>
+</body>
+</html>
